@@ -1,13 +1,16 @@
 
+import net.sourceforge.jdatepicker.DateModel;
+import net.sourceforge.jdatepicker.JDatePicker;
+import net.sourceforge.jdatepicker.impl.JDatePanelImpl;
+import net.sourceforge.jdatepicker.impl.JDatePickerImpl;
+import net.sourceforge.jdatepicker.impl.UtilDateModel;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
+import java.util.Properties;
 
-public class UIExample {
-    private JFrame frame;
-    private JLabel logInLabel, usernameLabel, passwordLabel, dateLabel, iconLabel;
-    private JTextField usernameField, dateField;
-    private JPasswordField passwordField;
-    private JButton logInButton, exitButton;
+public class UIExample extends JPanel{
 
 
     public UIExample() {
@@ -17,57 +20,59 @@ public class UIExample {
         Font labelFont = new Font("Georgia", Font.BOLD, 15);
         Font buttonFont = new Font("Merriweather", Font.BOLD, 12);
 
-        frame = new JFrame("Account Example");
+        JFrame frame = new JFrame("Account Example");
         frame.setLayout(null);
         frame.setSize(500, 400);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
 
-        logInLabel = new JLabel("LOG-IN TO YOUR ACCOUNT");
+        JLabel logInLabel = new JLabel("LOG-IN TO YOUR ACCOUNT");
         logInLabel.setBounds(75, 2, 400, 50);
         logInLabel.setForeground(Color.BLUE);
         logInLabel.setFont(font);
 
-        iconLabel = new JLabel();
+        JLabel iconLabel = new JLabel();
         iconLabel.setIcon(logoIcon);
         iconLabel.setBounds(220, 50, 50, 50);
 
-        usernameLabel = new JLabel("Username:");
-        usernameLabel.setBounds(100, 130, 100, 10);
+        JLabel usernameLabel = new JLabel("Username:");
+        usernameLabel.setBounds(100, 130, 100, 12);
         usernameLabel.setForeground(Color.DARK_GRAY);
         usernameLabel.setFont(labelFont);
 
-        passwordLabel = new JLabel("Password:");
-        passwordLabel.setBounds(100, 180, 100, 10);
+        JLabel passwordLabel = new JLabel("Password:");
+        passwordLabel.setBounds(100, 180, 100, 12);
         passwordLabel.setForeground(Color.DARK_GRAY);
         passwordLabel.setFont(labelFont);
 
-        dateLabel = new JLabel("Date:");
-        dateLabel.setBounds(100, 230, 100, 10);
+        JLabel dateLabel = new JLabel("Date:");
+        dateLabel.setBounds(100, 230, 100, 12);
         dateLabel.setForeground(Color.DARK_GRAY);
         dateLabel.setFont(labelFont);
 
-        usernameField = new JTextField();
+        JTextField usernameField = new JTextField();
         usernameField.setBounds(225, 125, 150, 20);
         usernameField.setForeground(Color.DARK_GRAY);
         usernameField.setFont(labelFont);
 
-        passwordField = new JPasswordField();
+        JPasswordField passwordField = new JPasswordField();
         passwordField.setBounds(225, 175, 150, 20);
         passwordField.setForeground(Color.DARK_GRAY);
         passwordField.setFont(labelFont);
 
-        dateField = new JTextField();
-        dateField.setBounds(225, 225, 150, 20);
+        UtilDateModel model = new UtilDateModel();
+        JDatePanelImpl datePanel = new JDatePanelImpl(model);
+        JDatePickerImpl dateField = new JDatePickerImpl(datePanel);
+        dateField.setBounds(225, 225, 150, 30);
         dateField.setForeground(Color.DARK_GRAY);
         dateField.setFont(labelFont);
 
-        logInButton = new JButton("Log In");
+        JButton logInButton = new JButton("Log In");
         logInButton.setBounds(150, 300, 100, 20);
         logInButton.setForeground(Color.DARK_GRAY);
         logInButton.setFont(buttonFont);
 
-        exitButton = new JButton("Exit");
+        JButton exitButton = new JButton("Exit");
         exitButton.setBounds(250, 300, 100, 20);
         exitButton.setForeground(Color.DARK_GRAY);
         exitButton.setFont(buttonFont);
