@@ -1,19 +1,15 @@
 
-import net.sourceforge.jdatepicker.DateModel;
-import net.sourceforge.jdatepicker.JDatePicker;
 import net.sourceforge.jdatepicker.impl.JDatePanelImpl;
 import net.sourceforge.jdatepicker.impl.JDatePickerImpl;
 import net.sourceforge.jdatepicker.impl.UtilDateModel;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
-import java.util.Properties;
 
-public class UIExample extends JPanel{
+public class UIExampleJava extends JPanel{
 
 
-    public UIExample() {
+    public UIExampleJava() {
 
         ImageIcon logoIcon = new ImageIcon("imaga icon location here");
         Font font = new Font("Serif", Font.BOLD, 24);
@@ -92,7 +88,7 @@ public class UIExample extends JPanel{
     }
 
     public static void main(String[] args) {
-        new UIExample();
+        new UIExampleJava();
     }
 
 }
