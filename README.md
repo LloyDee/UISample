@@ -1,1 +1,2 @@
 # UISample
+# Copyright: Lloyd Pintac
